@@ -1,22 +1,22 @@
 <script>
-	import Nav from '../components/Nav.svelte';
+	import { Nav, Header } from '@fusionstrings/elevate';
 
+	import Logo from '../components/logo.svelte';
+
+	let navList = [
+		{ href: '.', title: 'Home', label: 'Home' },
+		{ href: 'discover', title: 'Discover', label: 'Discover' },
+		{ href: 'bitmex', title: 'Bitmex', label: 'Bitmex' },
+		{ href: 'credits', title: 'Credits', label: 'Credits' }
+	];
 	export let segment;
 </script>
 
-<style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
-
-<Nav {segment}/>
+<Header>
+	<Logo href=".">Ticktrades</Logo>
+	<Nav {segment} {navList} />
+</Header>
 
 <main>
-	<slot></slot>
+	<slot />
 </main>

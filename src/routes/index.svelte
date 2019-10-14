@@ -1,46 +1,61 @@
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+<script>
+	import {
+		Hero,
+		Features,
+		FeatureList,
+		FeatureBlock,
+		Lead,
+		SectionLead
+	} from '@fusionstrings/elevate';
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
+	function onClick() {
+		return false;
 	}
-
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
-</style>
+</script>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Ticktrades</title>
 </svelte:head>
+<Hero
+	heading="One platform for seamless crypto-trading."
+	subheading="Introducing Ticktrades"
+	actions={[{ label: 'Features', href: 'features' }, { label: 'Subscribe', onClick: onClick }]}>
 
-<h1>Great success!</h1>
+	<img src="images/app-screenshot-big.png" alt="" class="animate-intro" />
+</Hero>
 
-<figure>
-	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
-</figure>
+<Features>
+	<SectionLead title="Features You'll Love.">
+		<Lead>
+			Lorem ipsum Tempor do Excepteur nulla aute deserunt reprehenderit
+			aute commodo aliquip laboris velit eu esse exercitation ex fugiat
+			pariatur aute consequat. Lorem ipsum Fugiat mollit quis qui. Lorem
+			ipsum Duis Excepteur Duis magna fugiat incididunt qui id quis dolor
+			nisi irure proident labore ut in incididunt eiusmod est anim.
+		</Lead>
+	</SectionLead>
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+	<FeatureList>
+		<FeatureBlock
+			order="01."
+			title="Portfolio Manager"
+			content="Sync your portfolio across exchanges and ticktrades allows
+			you to track, manage and analyze your holdings." />
+
+		<FeatureBlock
+			order="02."
+			title="Unlimited alerts"
+			content="Personalised alerts that detects pumps and dumps, sends you technical analysis indicators, changes in volume and price." />
+
+		<FeatureBlock
+			order="03."
+			title="Trading Terminal"
+			content="Place your trades on multiple exchanges, with trading options to place laddering trades and trailing trades." />
+
+		<FeatureBlock
+			order="04."
+			title="News and social"
+			content="Follow the news and chatter over social to keep track of whats making your investments tick." />
+		
+	</FeatureList>
+</Features>
