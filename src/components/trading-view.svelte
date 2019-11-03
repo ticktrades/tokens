@@ -18,7 +18,7 @@
 	export let studies = ['RSI@tv-basicstudies'];
 
 	beforeUpdate(async () => {
-		document.querySelector(`#${container_id}`).innerHTML = '';
+		//document.querySelector(`#${container_id}`).innerHTML = '';
 
 		const config = {
 			autosize: true,
