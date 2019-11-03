@@ -14,7 +14,7 @@
     text-align: center;
     letter-spacing: -0.2rem;
     position: absolute;
-    left: 26px;
+    left: 20px;
     top: 30px;
     line-height: 0;
   }
@@ -25,7 +25,8 @@
     border: none;
     color: var(--brand-color);
     text-decoration: none;
-    height: 32px;
+    height: 30px;
+    width: 26px;
     display: inline-block;
     transition: all 0.5s ease-in-out;
   }
