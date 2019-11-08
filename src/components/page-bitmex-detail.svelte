@@ -32,7 +32,7 @@
 
 	aside {
 		display: grid;
-		grid-template-columns: 100px auto;
+		grid-template-columns: auto auto;
 		grid-gap: 10px;
 	}
 

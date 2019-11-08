@@ -2,4 +2,6 @@
 	--brand-color: gold;
 	--card-background: #262b3e;
 	--card-text-color: #c4c4c4;
+	--text-color-tab-selected: gold;
+	/* --text-color-tab-selected: var(--text-color-heading-hero); */
 }

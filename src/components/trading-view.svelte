@@ -9,9 +9,11 @@
 	export let theme = 'dark';
 	export let style = '1';
 	export let locale = 'en';
-	export let toolbar_bg = '#f1f3f6';
+	export let toolbar_bg = '#262b3e';
 	export let enable_publishing = false;
 	export let hide_top_toolbar = false;
+	export let hide_side_toolbar = false;
+	export let allow_symbol_change = true;
 	export let hide_legend = true;
 	export let save_image = false;
 	export let container_id = 'tradingview-widget';
@@ -31,6 +33,8 @@
 			toolbar_bg,
 			enable_publishing,
 			hide_top_toolbar,
+			hide_side_toolbar,
+			allow_symbol_change,
 			hide_legend,
 			save_image,
 			container_id,
@@ -43,7 +47,7 @@
 </script>
 
 <style>
-	#tradingview-widget {
+	/* #tradingview-widget {
 		height: 50vh;
 	}
 
@@ -51,7 +55,7 @@
 		#tradingview-widget {
 			height: 40vh;
 		}
-	}
+	} */
 </style>
 
 <div id="tradingview-widget" />

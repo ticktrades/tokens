@@ -8,8 +8,7 @@
 	import BitmexSymbolOrderOpen from './bitmex-symbol-orders-open.svelte';
 	import BitmexSymbolOrderClose from './bitmex-symbol-orders-close.svelte';
 	import BitmexSymbolOrderPosition from './bitmex-symbol-orders-position.svelte';
-	import BitmexSymbolOrderbookAsks from './bitmex-symbol-orderbook-asks.svelte';
-	import BitmexSymbolOrderbookBids from './bitmex-symbol-orderbook-bids.svelte';
+	import BitmexSymbolOrderbook from './bitmex-symbol-orderbook.svelte';
 	import BitmexSymbolTradeRecent from './bitmex-symbol-trade-recent.svelte';
 	import BitmexSymbolTradeWhale from './bitmex-symbol-trade-whale.svelte';
 	import BitmexSymbolLiquidations from './bitmex-symbol-liquidations.svelte';
@@ -26,22 +25,11 @@
 		box-sizing: border-box;
 		grid-gap: 10px;
 	}
-	:global(.symbol-detail #tradingview-widget) {
-		grid-column: 1 / span 2;
-	}
 </style>
 
 <div class="symbol-detail grid">
 	<TradingView exchange="BITMEX" {symbol} />
-
-	<Card>
-		<BitmexSymbolOrderbookAsks {symbol} />
-	</Card>
-    
-	<Card>
-		<BitmexSymbolOrderbookBids {symbol} />
-	</Card>
-
+	<BitmexSymbolOrderbook />
 	<Card>
 		<Tabs>
 			<TabList>
@@ -104,10 +92,20 @@
 	</Card>
 
 	<Card>
-		<BitmexSymbolTradeRecent {symbol} />
-	</Card>
-	<Card>
-		<BitmexSymbolTradeWhale {symbol} />
+		<Tabs>
+			<TabList>
+				<Tab>Recent Trades</Tab>
+				<Tab>Whale Trades</Tab>
+			</TabList>
+
+			<TabPanel>
+				<BitmexSymbolTradeRecent {symbol} />
+			</TabPanel>
+
+			<TabPanel>
+				<BitmexSymbolTradeWhale {symbol} />
+			</TabPanel>
+		</Tabs>
 	</Card>
 	<Card>
 		<section>

@@ -51,7 +51,7 @@
         <g
           id="xxxhdpi/large-ticktrades-small"
           transform="translate(-111.000000, -132.000000)"
-          fill="#FADB3F">
+          fill="gold">
           <path
             d="M383.916219,185.124715 L344.141642,185.124715
             L344.141642,288.452148 C344.141642,297.24295 345.726845,303.367597
