@@ -1,6 +1,5 @@
 <script>
 	import { Button } from '@fusionstrings/elevate';
-	import Card from './card.svelte';
 	export let symbolSummaries = [];
 </script>
 
@@ -19,7 +18,6 @@
 						{symbolSummary.symbol}
 					</Button>
 				</li>
-				<!-- <li><Card>{symbolSummary.symbol}</Card></li> -->
 			{/each}
 		</ul>
 	</aside>
