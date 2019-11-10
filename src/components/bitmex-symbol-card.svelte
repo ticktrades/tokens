@@ -21,6 +21,7 @@
 		grid-gap: 5px;
 	}
 	.symbol-price {
+		font: var(--symbol-font);
 		grid-column: span 8;
 		display: flex;
 		justify-content: space-between;
