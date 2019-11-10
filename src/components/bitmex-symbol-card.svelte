@@ -1,5 +1,5 @@
 <script>
-	import { Card } from './card.svelte';
+	import Card from './card.svelte';
 	import BitmexSymbolChart from './bitmex-symbol-chart.svelte';
 
 	export let symbol;
