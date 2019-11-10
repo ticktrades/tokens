@@ -32,14 +32,16 @@
 	:global(.symbol){
 		color: var(--text-color-symbol);
 		font-family: var(--font-family-symbol);
-		font-size: 2.2rem;
+		font-size: 2rem;
 	}
 
 	.price{
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 	}
 	.chart {
 		grid-column: span 5;
+		margin-left: -10px;
+		margin-bottom: -5px;
 	}
 	.change {
 		text-align: right;

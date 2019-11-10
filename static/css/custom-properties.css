@@ -7,7 +7,7 @@
 	--negative: #f05250 /* #fd6b60 orangered*/;
 	--white-shade: #f9f9f9;
 	--font-familiy-roboto-condensed: 'Roboto Condensed', sans-serif;
-	--font-family-symbol: var(-font-familiy-roboto-condensed);
+	--font-family-symbol: var(--font-familiy-roboto-condensed);
 	--text-color-symbol: var(--white-shade);
 	/* --text-color-tab-selected: var(--text-color-heading-hero); */
 }
