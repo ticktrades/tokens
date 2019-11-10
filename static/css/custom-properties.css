@@ -3,6 +3,11 @@
 	--card-background: #262b3e;
 	--card-text-color: #c4c4c4;
 	--text-color-tab-selected: gold;
-	--symbol-font: "Roboto Condensed", sans-serif;
+	--positive: #26a69a;
+	--negative: #f05250 /* #fd6b60 orangered*/;
+	--white-shade: #f9f9f9;
+	--font-familiy-roboto-condensed: 'Roboto Condensed', sans-serif;
+	--font-family-symbol: var(-font-familiy-roboto-condensed);
+	--text-color-symbol: var(--white-shade);
 	/* --text-color-tab-selected: var(--text-color-heading-hero); */
 }
