@@ -46,6 +46,7 @@
 	.change {
 		text-align: right;
 		grid-column: span 3;
+		white-space: nowrap;
 	}
 	:global(.bull){
 		color: var(--positive);

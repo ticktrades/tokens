@@ -1,4 +1,5 @@
 export {
+	Button,
 	Hero,
 	Features,
 	FeatureList,
