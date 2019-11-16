@@ -1207,4 +1207,215 @@ const ETHUSD = [
 	}
 ];
 
-export { ALL, XBTUSD, ETHUSD };
+const XBTUSD_24H = {
+	data: {
+		'0': [],
+		'1': [],
+		'2': [],
+		'3': [],
+		'4': [],
+		'5': [],
+		'6': [],
+		'7': [],
+		'8': [
+			{
+				leavesQty: 177058,
+				orderID: '3bdd2be3-8d8a-4579-d316-720dfef92be8',
+				price: 8462,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573913630, _nanoseconds: 123000000 }
+			},
+			{
+				leavesQty: 40576,
+				orderID: '3b2bc738-65b5-8543-6f59-94a1827ecaab',
+				price: 8469,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573913599, _nanoseconds: 464000000 }
+			},
+			{
+				leavesQty: 403625,
+				orderID: '5a522f4d-ee97-4031-fea4-ca5e1a2da29c',
+				price: 8514,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573912893, _nanoseconds: 275000000 }
+			},
+			{
+				leavesQty: 3536,
+				orderID: '50e497c8-e973-8c7e-852d-931866b7ae0b',
+				price: 8507,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573912888, _nanoseconds: 927000000 }
+			},
+			{
+				leavesQty: 1,
+				orderID: '23759148-8865-df8a-ac0a-668ea3792c16',
+				price: 8500.5,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573912882, _nanoseconds: 278000000 }
+			}
+		],
+		'9': [],
+		'10': [],
+		'11': [
+			{
+				leavesQty: 3322,
+				orderID: 'ee18c0f7-9d08-681d-e9a5-6a1b2d9111ef',
+				price: 8453.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573902323, _nanoseconds: 880000000 }
+			}
+		],
+		'12': [
+			{
+				leavesQty: 72,
+				orderID: '0a9c69b6-55ad-a7ed-6b93-64d00b83133f',
+				price: 8460.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573901380, _nanoseconds: 685000000 }
+			},
+			{
+				leavesQty: 398077,
+				orderID: '5f3fdd90-77f8-bac3-9740-01396ebdd25f',
+				price: 8468.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573901292, _nanoseconds: 94000000 }
+			},
+			{
+				leavesQty: 13586,
+				orderID: '4bddf684-97d5-6d0f-f745-b6eedaa15951',
+				price: 8481.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573901193, _nanoseconds: 444000000 }
+			}
+		],
+		'13': [
+			{
+				leavesQty: 396629,
+				orderID: '6af4ded1-1f81-4926-d116-543ac76a0d42',
+				price: 8527,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573896536, _nanoseconds: 383000000 }
+			},
+			{
+				leavesQty: 289471,
+				orderID: 'c3273bb9-3ee9-217c-4be2-06e27f797b5a',
+				price: 8519,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573896530, _nanoseconds: 687000000 }
+			},
+			{
+				leavesQty: 755983,
+				orderID: '7273d95b-7f7b-7433-6571-648e7b2f0ac4',
+				price: 8511,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573896524, _nanoseconds: 999000000 }
+			},
+			{
+				leavesQty: 10,
+				orderID: '3fb017d6-e159-c6e3-b8cc-fa442f62076b',
+				price: 8500.5,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573896514, _nanoseconds: 268000000 }
+			}
+		],
+		'14': [],
+		'15': [
+			{
+				leavesQty: 248222,
+				orderID: 'f1c96aa0-ab18-28db-e7ae-e5bdf6d88d2e',
+				price: 8496,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573887898, _nanoseconds: 858000000 }
+			},
+			{
+				leavesQty: 134522,
+				orderID: '5d93f2e9-5698-4e18-5947-f65ba7cb9c25',
+				price: 8488.5,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573887892, _nanoseconds: 684000000 }
+			},
+			{
+				leavesQty: 230,
+				orderID: 'ecd66e61-41b9-96df-57e5-7b4b11a893a3',
+				price: 8478,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573887847, _nanoseconds: 978000000 }
+			}
+		],
+		'16': [],
+		'17': [],
+		'18': [],
+		'19': [],
+		'20': [
+			{
+				leavesQty: 132408,
+				orderID: 'ed3446c8-cb5a-4da2-f9ef-8e52bf2ccc17',
+				price: 8430.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573870943, _nanoseconds: 605000000 }
+			}
+		],
+		'21': [],
+		'22': [],
+		'23': [
+			{
+				leavesQty: 51050,
+				orderID: 'f7ab4d2f-eb6c-652e-ab7a-1cf25a35a727',
+				price: 8452.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573861410, _nanoseconds: 293000000 }
+			},
+			{
+				leavesQty: 80250,
+				orderID: 'e694af72-e16c-b8c8-35b5-2914773c0bc6',
+				price: 8461.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573861405, _nanoseconds: 490000000 }
+			},
+			{
+				leavesQty: 5,
+				orderID: '34d01de2-3a6e-8c49-4f87-f969f6009eb0',
+				price: 8470.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573860558, _nanoseconds: 781000000 }
+			},
+			{
+				leavesQty: 82,
+				orderID: 'cd8a220b-ab93-21cb-8f0d-d0e63f7fe51d',
+				price: 8471.5,
+				side: 'Sell',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573860553, _nanoseconds: 205000000 }
+			},
+			{
+				leavesQty: 156164,
+				orderID: '23012235-7df9-c760-5f25-98bf36ecef4b',
+				price: 8507,
+				side: 'Buy',
+				symbol: 'XBTUSD',
+				timestamp: { _seconds: 1573858810, _nanoseconds: 84000000 }
+			}
+		]
+	}
+};
+export { ALL, XBTUSD, ETHUSD, XBTUSD_24H };
