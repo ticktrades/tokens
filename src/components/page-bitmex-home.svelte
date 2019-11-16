@@ -1,13 +1,13 @@
 <script>
 	import { onMount } from 'svelte';
 	import {goto} from '@sapper/app';
-	import SymbolList from './symbol-list.svelte';
+	import BitmexSymbolList from './bitmex-symbol-list.svelte';
 	import CardSymbolGraph from './card-symbol-graph.svelte';
 
 	export let page;
 	const { path } = page;
 	
-	let symbolSummaries = [{ symbol: 'BTC' }, { symbol: 'ETH' }];
+	let symbolSummaries = [{ symbol: 'XBTUSD' }, { symbol: 'ETHUSD' }];
 
 	function onMediaChange(event){
 		if(event.matches){	
@@ -23,4 +23,4 @@
 	});
 </script>
 
-<SymbolList {symbolSummaries} />
+<BitmexSymbolList {symbolSummaries} />

@@ -8,5 +8,4 @@
     import BitmexDetail from '../../components/page-bitmex-detail.svelte';
     export let page;
 </script>
-
 <BitmexDetail page={page} />
