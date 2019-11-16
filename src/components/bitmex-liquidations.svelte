@@ -8,6 +8,7 @@
 
 {#if entries.length > 0}
 	<Card>
+		<h2>Recent Liquidations</h2>
 		<Tabs>
 			<TabList>
 				{#each entries as [symbol]}
