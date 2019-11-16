@@ -4,6 +4,9 @@
 </script>
 
 <style>
+	aside{
+		margin-bottom: 100px;
+	}
 	li {
 		margin-bottom: 10px;
 	}
