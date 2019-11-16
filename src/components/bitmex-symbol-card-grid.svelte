@@ -11,6 +11,7 @@
 		/* repeat(auto-fill, minmax(70px, calc(50vw))); */
 		box-sizing: border-box;
 		grid-gap: 10px;
+		margin-bottom: 100px;
 		/* padding: 10px; */
 	}
 </style>
