@@ -15,7 +15,7 @@
 		letter-spacing: -0.2rem;
 		position: absolute;
 		left: 20px;
-		top: 30px;
+		top: 20px;
 		line-height: 0;
 		display: flex;
 		align-items: center;
