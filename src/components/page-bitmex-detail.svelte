@@ -7,7 +7,10 @@
 
 	export let page;
 	const { params, path } = page;
-	let symbolSummaries = [{ symbol: 'XBTUSD' }, { symbol: 'ETHUSD' }];
+	let symbolSummaries = [{ symbol: 'XBTUSD' }, { symbol: 'ETHUSD' }].map(instrument => ({
+			...instrument,
+			href: `bitmex/${instrument.symbol.toLocaleLowerCase()}`
+		}));
 </script>
 
 <style>
@@ -38,7 +41,7 @@
 <div class="grid">
 	<aside>
 		<StripNav />
-		<BitmexSymbolList {symbolSummaries} />
+		<BitmexSymbolList active={params.trade} {symbolSummaries} />
 	</aside>
 	<section class="detail">
 		<BitmexSymbolDetail symbol={params.trade} />

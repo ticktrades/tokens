@@ -1,5 +1,7 @@
 <script>
 	import { Button } from '@fusionstrings/elevate';
+
+	export let active = '';
 	export let symbolSummaries = [];
 </script>
 
@@ -14,7 +16,7 @@
 		<ul>
 			{#each symbolSummaries as symbolSummary}
 				<li>
-					<Button invert href={`bitmex/${symbolSummary.symbol.toLowerCase()}`}>
+					<Button invert href={symbolSummary.href} class={symbolSummary.symbol.toLocaleLowerCase() === active ? 'active' : ''}>
 						{symbolSummary.symbol}
 					</Button>
 				</li>
