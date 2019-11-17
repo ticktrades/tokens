@@ -24,10 +24,9 @@
 
 <section class="orderbook">
 	<Card compact>
-		<BitmexSymbolOrderbookAsks {symbol} />
-	</Card>
-
-	<Card compact>
 		<BitmexSymbolOrderbookBids {symbol} />
+	</Card>
+	<Card compact>
+		<BitmexSymbolOrderbookAsks {symbol} />
 	</Card>
 </section>
