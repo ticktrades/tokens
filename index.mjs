@@ -28,3 +28,6 @@ export {
 export {
 	default as BitmexLiquidations
 } from './src/components/bitmex-liquidations.svelte';
+
+export { default as mediaQuery } from './src/utils/match-media.js';
+export { default as loadScripts } from './src/utils/load-scripts.js';

@@ -8,18 +8,6 @@
 	export let page;
 	const { params, path } = page;
 	let symbolSummaries = [{ symbol: 'XBTUSD' }, { symbol: 'ETHUSD' }];
-
-	// function onMediaChange(event) {
-	// 	if (event.matches) {
-	// 		return goto('/bitmex');
-	// 	}
-	// }
-	// onMount(() => {
-	// 	const mql = window.matchMedia('screen and (max-width: 768px)');
-	// 	onMediaChange(mql);
-	// 	mql.addListener(onMediaChange);
-	// 	return () => mql.removeListener(onMediaChange);
-	// });
 </script>
 
 <style>
