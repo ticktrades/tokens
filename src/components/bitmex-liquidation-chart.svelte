@@ -4,7 +4,7 @@
 	import Card from './card.svelte';
 
 	export let liquidations;
-	export let symbol;
+	
 	let totalBuy = 0;
 	let totalSell = 0;
 	let xbtChartdata = [];

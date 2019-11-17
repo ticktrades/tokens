@@ -1,6 +1,5 @@
 <script>
 	import { Table } from '@fusionstrings/elevate';
-	export let symbol = '';
 </script>
 
 <style>
