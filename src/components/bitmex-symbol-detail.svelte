@@ -24,18 +24,21 @@
 	.grid {
 		display: grid;
 		/* grid-template-columns: minmax(500px, 2fr) minmax(300px, 1fr) minmax(300px, 1fr);  */
-		grid-template-columns: repeat(auto-fill, minmax(300px, 100vw));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		box-sizing: border-box;
 		grid-gap: 10px;
 	}
-	/* :global(.symbol-detail #tradingview-widget) {
+	:global(.symbol-detail #tradingview-widget) {
 		grid-column: 1 / span 2;
-	} */
+	}
 
-	@media only screen and (min-width: 769px) {
-		:global(.symbol-detail #tradingview-widget) {
-			grid-column: 1 / span 2;
+	@media only screen and (max-width: 768px) {
+		.grid{
+			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
 		}
+		/* :global(.symbol-detail #tradingview-widget) {
+			grid-column: 1 / span 2;
+		} */
 	}
 </style>
 
