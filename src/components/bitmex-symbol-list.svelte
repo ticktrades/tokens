@@ -6,8 +6,14 @@
 </script>
 
 <style>
-	li {
-		margin-bottom: 10px;
+	ul {
+		display: grid;
+		grid-template-columns: auto;
+		grid-gap: 10px;
+		margin: 0;
+	}
+	:global(.symbol-list > ul a){
+		display: block;
 	}
 </style>
 
