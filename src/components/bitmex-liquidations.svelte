@@ -8,6 +8,9 @@
 	$: entries = Object.entries(liquidations);
 </script>
 <style>
+h4{
+	text-align: center;
+}
 .liquidation-table{
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -18,7 +21,7 @@
 {#if entries.length > 0}
 	<div class="liquidation-table">
 		<Card>
-			<h2>Recent Liquidations</h2>
+			<h4>Recent Liquidations</h4>
 			<Tabs>
 				<TabList>
 					{#each entries as [symbol]}
