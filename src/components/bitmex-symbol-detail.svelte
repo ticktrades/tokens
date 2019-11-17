@@ -36,9 +36,9 @@
 		.grid{
 			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
 		}
-		/* :global(.symbol-detail #tradingview-widget) {
-			grid-column: 1 / span 2;
-		} */
+		:global(.symbol-detail #tradingview-widget) {
+			grid-column: 1;
+		}
 	}
 </style>
 
