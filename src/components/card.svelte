@@ -17,9 +17,6 @@
 		letter-spacing: 0.2rem;
 		font-weight: var(--font-weight-black);
 	}
-	:global(.symbol-detail #tradingview-widget) {
-		grid-column: 1 / span 2;
-	}
 
 	:global(.svelte-tabs li.svelte-tabs__tab) {
 		color: white;

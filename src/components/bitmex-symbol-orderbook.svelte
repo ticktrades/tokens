@@ -10,6 +10,7 @@
 		display: grid;
 		box-sizing: border-box;
 		grid-gap: 10px;
+		grid-template-columns: 1fr 1fr;
 	}
 
 	:global(.orderbook .responsive) {

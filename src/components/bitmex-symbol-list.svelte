@@ -14,7 +14,7 @@
 		<ul>
 			{#each symbolSummaries as symbolSummary}
 				<li>
-					<Button invert href={symbolSummary.symbol.toLowerCase()}>
+					<Button invert href={`bitmex/${symbolSummary.symbol.toLowerCase()}`}>
 						{symbolSummary.symbol}
 					</Button>
 				</li>

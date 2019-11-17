@@ -13,6 +13,9 @@
 	import BitmexSymbolTradeWhale from './bitmex-symbol-trade-whale.svelte';
 	import BitmexSymbolLiquidations from './bitmex-symbol-liquidations.svelte';
 	import BitmexSymbolLS from './bitmex-symbol-ls.svelte';
+	import mediaQuery from '../utils/match-media.js';
+
+	let medQMobile = mediaQuery('(max-width: 768px)');
 
 	export let symbol;
 </script>
@@ -21,14 +24,23 @@
 	.grid {
 		display: grid;
 		/* grid-template-columns: minmax(500px, 2fr) minmax(300px, 1fr) minmax(300px, 1fr);  */
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(300px, 100vw));
 		box-sizing: border-box;
 		grid-gap: 10px;
+	}
+	/* :global(.symbol-detail #tradingview-widget) {
+		grid-column: 1 / span 2;
+	} */
+
+	@media only screen and (min-width: 769px) {
+		:global(.symbol-detail #tradingview-widget) {
+			grid-column: 1 / span 2;
+		}
 	}
 </style>
 
 <div class="symbol-detail grid">
-	<TradingView exchange="BITMEX" {symbol} />
+	<TradingView exchange="BITMEX" {symbol} hide_side_toolbar={$medQMobile} />
 	<BitmexSymbolOrderbook />
 	<Card>
 		<Tabs>
