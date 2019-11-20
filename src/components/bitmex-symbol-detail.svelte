@@ -19,7 +19,7 @@
 
 	export let symbol;
 	export let price;
-	export let side;
+	export let side = '';
 	export let orderBook10Stream = { bids: [], asks: [] };
 	export let liquidations;
 	export let liquidationsChart;
