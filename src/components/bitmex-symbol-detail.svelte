@@ -18,6 +18,9 @@
 	let medQMobile = mediaQuery('(max-width: 768px)');
 
 	export let symbol;
+	export let price;
+	export let side;
+	export let orderBook10Stream = { bids: [], asks: [] };
 </script>
 
 <style>
@@ -31,9 +34,25 @@
 	:global(.symbol-detail #tradingview-widget) {
 		grid-column: 1 / span 2;
 	}
-
+	.symbol {
+		font-family: var(--font-family-symbol);
+		text-transform: uppercase;
+	}
+	:global(.buy) {
+		color: var(--positive);
+	}
+	:global(.sell) {
+		color: var(--negative);
+	}
+	h2 {
+		text-align: center;
+	}
+	h2 .price {
+		font-size: 2rem;
+		font-weight: 300;
+	}
 	@media only screen and (max-width: 768px) {
-		.grid{
+		.grid {
 			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
 		}
 		:global(.symbol-detail #tradingview-widget) {
@@ -43,8 +62,17 @@
 </style>
 
 <div class="symbol-detail grid">
+	<slot name="header">
+		<h2>
+			<span class="symbol">{symbol.toUpperCase()}</span>
+			<span class={`price ${side.toLowerCase()}`}>
+				{Number(price).toLocaleString()}
+			</span>
+		</h2>
+	</slot>
 	<TradingView exchange="BITMEX" {symbol} hide_side_toolbar={$medQMobile} />
-	<BitmexSymbolOrderbook />
+
+	<BitmexSymbolOrderbook {orderBook10Stream} />
 	<Card>
 		<Tabs>
 			<TabList>
