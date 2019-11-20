@@ -33,9 +33,9 @@
 		grid-template-columns: 1fr 1fr;
 	}
 
-	:global(.orderbook .responsive) {
+	/* :global(.orderbook .responsive) {
 		height: 25vh;
-	}
+	} */
 
 	:global(.orderbook .responsive table th:last-child, .orderbook
 			.responsive
@@ -63,43 +63,45 @@
 	}
 </style>
 
-<div class="gauge">
-	<div
-		class="summary summary-bid"
-		data-width={orderBook10StreamBidSizePercent}>
-		<span>{Number(orderBook10StreamBidSize).toLocaleString()}</span>
-		<span>
-			{Number(orderBook10StreamBidSizePercent
-					.toFixed(2)
-					.toLocaleString())} %
-		</span>
-	</div>
-	<div
-		class="summary summary-ask"
-		data-width={orderBook10StreamAskSizePercent}>
-		<span>{Number(orderBook10StreamAskSize).toLocaleString()}</span>
-		<span>
-			{Number(orderBook10StreamAskSizePercent
-					.toFixed(2)
-					.toLocaleString())} %
-		</span>
-	</div>
-	<div>
+<section>
+	<div class="gauge">
 		<div
-			class="orderbook-bid-size"
-			style="width: {orderBook10StreamBidSizePercent}%" />
-	</div>
-	<div>
+			class="summary summary-bid"
+			data-width={orderBook10StreamBidSizePercent}>
+			<span>{Number(orderBook10StreamBidSize).toLocaleString()}</span>
+			<span>
+				{Number(orderBook10StreamBidSizePercent
+						.toFixed(2)
+						.toLocaleString())} %
+			</span>
+		</div>
 		<div
-			class="orderbook-ask-size"
-			style="width: {orderBook10StreamAskSizePercent}%" />
+			class="summary summary-ask"
+			data-width={orderBook10StreamAskSizePercent}>
+			<span>{Number(orderBook10StreamAskSize).toLocaleString()}</span>
+			<span>
+				{Number(orderBook10StreamAskSizePercent
+						.toFixed(2)
+						.toLocaleString())} %
+			</span>
+		</div>
+		<div>
+			<div
+				class="orderbook-bid-size"
+				style="width: {orderBook10StreamBidSizePercent}%" />
+		</div>
+		<div>
+			<div
+				class="orderbook-ask-size"
+				style="width: {orderBook10StreamAskSizePercent}%" />
+		</div>
 	</div>
-</div>
-<section class="orderbook">
-	<Card compact>
-		<BitmexSymbolOrderbookBids bids={orderBook10Stream.bids} {symbol} />
-	</Card>
-	<Card compact>
-		<BitmexSymbolOrderbookAsks asks={orderBook10Stream.asks} {symbol} />
-	</Card>
+	<section class="orderbook">
+		<Card compact>
+			<BitmexSymbolOrderbookBids bids={orderBook10Stream.bids} {symbol} />
+		</Card>
+		<Card compact>
+			<BitmexSymbolOrderbookAsks asks={orderBook10Stream.asks} {symbol} />
+		</Card>
+	</section>
 </section>
