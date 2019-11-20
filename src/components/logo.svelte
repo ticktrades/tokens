@@ -9,9 +9,7 @@
 		color: var(--brand-color);
 		text-align: center;
 		letter-spacing: -0.2rem;
-		position: absolute;
-		left: 20px;
-		top: 20px;
+		margin-left: 20px;
 		line-height: 0;
 		display: flex;
 		align-items: center;

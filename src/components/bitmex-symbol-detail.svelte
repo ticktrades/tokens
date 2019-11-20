@@ -65,14 +65,14 @@
 </style>
 
 <div class="symbol-detail grid">
-	<slot name="header">
+	<!-- <slot name="header">
 		<h2>
 			<span class="symbol">{symbol.toUpperCase()}</span>
 			<span class={`price ${side.toLowerCase()}`}>
 				{Number(price).toLocaleString()}
 			</span>
 		</h2>
-	</slot>
+	</slot> -->
 	<TradingView exchange="BITMEX" {symbol} hide_side_toolbar={$medQMobile} />
 
 	<BitmexSymbolOrderbook {orderBook10Stream} />
