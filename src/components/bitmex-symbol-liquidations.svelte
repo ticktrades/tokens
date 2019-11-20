@@ -9,9 +9,9 @@
 	}
 
 
-	:global(.orderbook .responsive) {
+	/* :global(.orderbook .responsive) {
 		height: 25vh;
-	}
+	} */
 </style>
 
 <section class="liquidation">
