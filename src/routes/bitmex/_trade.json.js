@@ -6,79 +6,79 @@ export default {
 				"price": 8201.5,
 				"prevPrice24h": 8541.5,
 				"symbol": "XBTUSD",
-				"href": "exchanges/bitmex/trades/XBTUSD"
+				"href": "bitmex/XBTUSD"
 			},
 			{
 				"price": 178.45,
 				"prevPrice24h": 184.45,
 				"symbol": "ETHUSD",
-				"href": "exchanges/bitmex/trades/ETHUSD"
+				"href": "bitmex/ETHUSD"
 			},
 			{
 				"price": 0.00000529,
 				"prevPrice24h": 0.0000053,
 				"symbol": "ADAZ19",
-				"href": "exchanges/bitmex/trades/ADAZ19"
+				"href": "bitmex/ADAZ19"
 			},
 			{
 				"price": 0.03011,
 				"prevPrice24h": 0.03131,
 				"symbol": "BCHZ19",
-				"href": "exchanges/bitmex/trades/BCHZ19"
+				"href": "bitmex/BCHZ19"
 			},
 			{
 				"price": 0.0003868,
 				"prevPrice24h": 0.0003976,
 				"symbol": "EOSZ19",
-				"href": "exchanges/bitmex/trades/EOSZ19"
+				"href": "bitmex/EOSZ19"
 			},
 			{
 				"price": 0.02169,
 				"prevPrice24h": 0.02159,
 				"symbol": "ETHZ19",
-				"href": "exchanges/bitmex/trades/ETHZ19"
+				"href": "bitmex/ETHZ19"
 			},
 			{
 				"price": 0.006795,
 				"prevPrice24h": 0.00693,
 				"symbol": "LTCZ19",
-				"href": "exchanges/bitmex/trades/LTCZ19"
+				"href": "bitmex/LTCZ19"
 			},
 			{
 				"price": 0.00000208,
 				"prevPrice24h": 0.0000022,
 				"symbol": "TRXZ19",
-				"href": "exchanges/bitmex/trades/TRXZ19"
+				"href": "bitmex/TRXZ19"
 			},
 			{
 				"price": 8455.5,
 				"prevPrice24h": 8758,
 				"symbol": "XBTH20",
-				"href": "exchanges/bitmex/trades/XBTH20"
+				"href": "bitmex/XBTH20"
 			},
 			{
 				"price": 8285.5,
 				"prevPrice24h": 8623.5,
 				"symbol": "XBTZ19",
-				"href": "exchanges/bitmex/trades/XBTZ19"
+				"href": "bitmex/XBTZ19"
 			},
 			{
 				"price": 0.00003062,
 				"prevPrice24h": 0.00003085,
 				"symbol": "XRPZ19",
-				"href": "exchanges/bitmex/trades/XRPZ19"
+				"href": "bitmex/XRPZ19"
 			},
 			{
 				"price": 0.00417,
 				"prevPrice24h": 0.0018,
 				"symbol": "XBT7D_D95",
-				"href": "exchanges/bitmex/trades/XBT7D_D95"
+				"href": "bitmex/XBT7D_D95"
 			},
 			{
 				"price": 0.00112,
 				"prevPrice24h": 0.00206,
 				"symbol": "XBT7D_U105",
-				"href": "exchanges/bitmex/trades/XBT7D_U105"
+				"href": "bitmex/XBT7D_U105"
 			}
 		],
 		"activeInstrumentsHourlyRate": {

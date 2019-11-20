@@ -1,5 +1,6 @@
 <script context="module">
 	import data from './_trade.json.js';
+	import { ALL, XBTUSD, ETHUSD, XBTUSD_24H } from './_liquidations.json.js';
 	export async function preload(page) {
 		const symbol = page.params.trade;
 		//debugger
@@ -17,7 +18,9 @@
 			symbolSummaries,
 			activeInstrumentsHourlyRate,
 			recentTrades,
-			tradeStream: recentTrades[0]
+			tradeStream: recentTrades[0],
+			liquidations: { ALL, XBTUSD, ETHUSD },
+			liquidationsChart: { XBTUSD: XBTUSD_24H }
 		};
 	}
 </script>
@@ -33,6 +36,8 @@
 	export let symbol;
 	export let symbolSummaries;
 	export let tradeStream = {};
+	export let liquidations;
+	export let liquidationsChart;
 </script>
 
 <style>
@@ -69,6 +74,8 @@
 			{symbol}
 			price={tradeStream.price}
 			side={tradeStream.side}
-			{orderBook10Stream} />
+			{orderBook10Stream}
+			{liquidations}
+			{liquidationsChart} />
 	</section>
 </div>

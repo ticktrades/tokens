@@ -11,8 +11,8 @@
 	import BitmexSymbolOrderbook from './bitmex-symbol-orderbook.svelte';
 	import BitmexSymbolTradeRecent from './bitmex-symbol-trade-recent.svelte';
 	import BitmexSymbolTradeWhale from './bitmex-symbol-trade-whale.svelte';
-	import BitmexSymbolLiquidations from './bitmex-symbol-liquidations.svelte';
-	import BitmexSymbolLS from './bitmex-symbol-ls.svelte';
+	import BitmexLiquidationTabs from './bitmex-liquidation-tabs.svelte';
+	import BitmexLiquidationChart from './bitmex-liquidation-chart.svelte';
 	import mediaQuery from '../utils/match-media.js';
 
 	let medQMobile = mediaQuery('(max-width: 768px)');
@@ -21,6 +21,8 @@
 	export let price;
 	export let side;
 	export let orderBook10Stream = { bids: [], asks: [] };
+	export let liquidations;
+	export let liquidationsChart;
 </script>
 
 <style>
@@ -51,6 +53,7 @@
 		font-size: 2rem;
 		font-weight: 300;
 	}
+
 	@media only screen and (max-width: 768px) {
 		.grid {
 			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
@@ -73,22 +76,26 @@
 	<TradingView exchange="BITMEX" {symbol} hide_side_toolbar={$medQMobile} />
 
 	<BitmexSymbolOrderbook {orderBook10Stream} />
-	<Card>
-		<Tabs>
-			<TabList>
-				<Tab>Liquidations</Tab>
-				<Tab>Longs vs Shorts</Tab>
-			</TabList>
+	<div class="liquidation-card">
 
-			<TabPanel>
-				<BitmexSymbolLiquidations {symbol} />
-			</TabPanel>
+		<Card>
+			<Tabs>
+				<TabList>
+					<Tab>Liquidations</Tab>
+					<Tab>Longs vs Shorts</Tab>
+				</TabList>
 
-			<TabPanel>
-				<BitmexSymbolLS {symbol} />
-			</TabPanel>
-		</Tabs>
-	</Card>
+				<TabPanel>
+					<BitmexLiquidationTabs {liquidations} />
+				</TabPanel>
+
+				<TabPanel>
+
+					<BitmexLiquidationChart liquidations={liquidationsChart} />
+				</TabPanel>
+			</Tabs>
+		</Card>
+	</div>
 
 	<Card>
 		<Tabs>
