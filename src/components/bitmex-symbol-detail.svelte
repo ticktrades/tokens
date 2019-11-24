@@ -21,6 +21,7 @@
 	export let orderBook10Stream = { bids: [], asks: [] };
 	export let liquidations;
 	export let liquidationsChart;
+	export let recentTrades;
 </script>
 
 <style>
@@ -71,7 +72,6 @@
 				</TabPanel>
 
 				<TabPanel>
-
 					<BitmexLiquidationChart liquidations={liquidationsChart} />
 				</TabPanel>
 			</Tabs>
@@ -130,7 +130,7 @@
 			</TabList>
 
 			<TabPanel>
-				<BitmexSymbolTradeRecent {symbol} />
+				<BitmexSymbolTradeRecent {recentTrades} {symbol} />
 			</TabPanel>
 
 			<TabPanel>

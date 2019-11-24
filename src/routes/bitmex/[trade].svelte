@@ -39,6 +39,7 @@
 	export let tradeStream = {};
 	export let liquidations;
 	export let liquidationsChart;
+	export let recentTrades;
 	$: {
 		tradeStreamStore.update(store => ({...store, symbol}) )
 	}
@@ -76,9 +77,8 @@
 	<section class="detail">
 		<BitmexSymbolDetail
 			{symbol}
-			price={tradeStream.price}
-			side={tradeStream.side}
 			{orderBook10Stream}
+			{recentTrades}
 			{liquidations}
 			{liquidationsChart} />
 	</section>
