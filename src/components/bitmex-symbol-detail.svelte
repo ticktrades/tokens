@@ -22,6 +22,8 @@
 	export let liquidations;
 	export let liquidationsChart;
 	export let recentTrades;
+	export let trendingArticles = [];
+	export let techAnalysis = [];
 </script>
 
 <style>
@@ -79,25 +81,7 @@
 	</div>
 
 	<Card>
-		<Tabs>
-			<TabList>
-				<Tab>News</Tab>
-				<Tab>Reddit</Tab>
-				<Tab>Twitter</Tab>
-			</TabList>
-
-			<TabPanel>
-				<BitmexSymbolNews {symbol} />
-			</TabPanel>
-
-			<TabPanel>
-				<BitmexSymbolReddit {symbol} />
-			</TabPanel>
-
-			<TabPanel>
-				<BitmexSymbolTwitter {symbol} />
-			</TabPanel>
-		</Tabs>
+		<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
 	</Card>
 
 	<Card>
