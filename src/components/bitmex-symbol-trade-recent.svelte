@@ -19,9 +19,20 @@
 	.sell {
 		color: var(--negative);
 	}
+	:global(.table-recent-orders .responsive) {
+		overflow-y: auto;
+		height: 50vh;
+	}
+	@media only screen and (min-width: 769px) {
+		
+		:global(.table-recent-orders .responsive) {
+			overflow-y: auto;
+			height: 26vh;
+		}
+	}
 </style>
-
 {#if recentTrades.length > 0}
+<div class="table-recent-orders">
 	<Table compact>
 		<thead>
 			<tr>
@@ -42,7 +53,7 @@
 						{Number(recentTrade.size).toLocaleString()}
 					</td>
 
-					<td width="25%" class={`number ${recentTrade.side.toLowerCase()}`}>
+					<td width="25%" class={`number ${recentTrade.side ? recentTrade.side.toLowerCase() : ''}`}>
 						{Number(recentTrade.price).toLocaleString()}
 					</td>
 
@@ -53,4 +64,5 @@
 			{/each}
 		</tbody>
 	</Table>
+	</div>
 {/if}
