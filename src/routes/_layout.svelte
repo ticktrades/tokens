@@ -3,6 +3,7 @@
 	import { Nav, Header } from '@fusionstrings/elevate';
 
 	import Logo from '../components/logo.svelte';
+	import {tradeStreamStore} from '../stores/bitmex.js';
 
 	const { preloading, page, session } = stores();
 	let navList = [
@@ -27,7 +28,23 @@
 		align-items: center;
 	}
 	.symbol{
+		text-align: right;
+		display: inline-block;
+		min-width: 100px;
+		margin-right: 10px;
 		font-size: 2.5rem;
+	}
+	.price {
+		text-align: left;
+		display: inline-block;
+		min-width: 100px;
+		font-size: 2rem;
+	}
+	:global(.buy) {
+		color: var(--positive);
+	}
+	:global(.sell) {
+		color: var(--negative);
 	}
 </style>
 
@@ -35,8 +52,8 @@
 	<Logo href=".">Ticktrades</Logo>
 
 	<div class="header-content">
-		{#if $page && $page.params && $page.params.trade}
-			<span class="symbol">{$page.params.trade}</span>
+		{#if $tradeStreamStore && $tradeStreamStore.symbol && $tradeStreamStore.price}
+			<span class="symbol">{$tradeStreamStore.symbol}</span> <span class={`price ${$tradeStreamStore.side.toLowerCase()}`}>{$tradeStreamStore.price}</span>
 		{/if}
 	</div>
 	<Nav {segment} {navList} />

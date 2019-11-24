@@ -12,8 +12,12 @@
 		grid-gap: 10px;
 		margin: 0;
 	}
-	:global(.symbol-list > ul a){
+	:global(.symbol-list > ul a) {
 		display: block;
+	}
+	:global(.symbol-list .active .button.invert){
+		border-color: var(--brand-color);
+		color: var(--brand-color);
 	}
 </style>
 
@@ -21,8 +25,9 @@
 	<aside class="symbol-list">
 		<ul>
 			{#each symbolSummaries as symbolSummary}
-				<li>
-					<Button invert href={symbolSummary.href} class={symbolSummary.symbol.toLocaleLowerCase() === active ? 'active' : ''}>
+				<li
+					class:active={symbolSummary.symbol.toLocaleLowerCase() === active.toLowerCase()}>
+					<Button invert href={symbolSummary.href}>
 						{symbolSummary.symbol}
 					</Button>
 				</li>

@@ -18,8 +18,6 @@
 	let medQMobile = mediaQuery('(max-width: 768px)');
 
 	export let symbol;
-	export let price;
-	export let side = '';
 	export let orderBook10Stream = { bids: [], asks: [] };
 	export let liquidations;
 	export let liquidationsChart;
@@ -35,23 +33,6 @@
 	}
 	:global(.symbol-detail #tradingview-widget) {
 		grid-column: 1 / span 2;
-	}
-	.symbol {
-		font-family: var(--font-family-symbol);
-		text-transform: uppercase;
-	}
-	:global(.buy) {
-		color: var(--positive);
-	}
-	:global(.sell) {
-		color: var(--negative);
-	}
-	h2 {
-		text-align: center;
-	}
-	h2 .price {
-		font-size: 2rem;
-		font-weight: 300;
 	}
 
 	@media only screen and (max-width: 768px) {

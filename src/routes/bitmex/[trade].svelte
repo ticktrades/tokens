@@ -33,11 +33,15 @@
 	import BitmexSymbolDetail from '../../components/bitmex-symbol-detail.svelte';
 	import orderBook10Stream from './_orderbook10stream.json.js';
 
+	import {tradeStreamStore} from '../../stores/bitmex.js';
 	export let symbol;
 	export let symbolSummaries;
 	export let tradeStream = {};
 	export let liquidations;
 	export let liquidationsChart;
+	$: {
+		tradeStreamStore.update(store => ({...store, symbol}) )
+	}
 </script>
 
 <style>
