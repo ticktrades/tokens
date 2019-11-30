@@ -29,7 +29,14 @@
 	.grid {
 		display: grid;
 		/* grid-template-columns: minmax(500px, 2fr) minmax(300px, 1fr) minmax(300px, 1fr);  */
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+		box-sizing: border-box;
+		grid-gap: 10px;
+	}
+	.subgrid {
+		display: grid;
+		/* grid-template-columns: minmax(500px, 2fr) minmax(300px, 1fr) minmax(300px, 1fr);  */
+		grid-template-columns: repeat(auto-fill, minmax(250px, auto));
 		box-sizing: border-box;
 		grid-gap: 10px;
 	}
@@ -38,7 +45,7 @@
 	}
 
 	@media only screen and (max-width: 768px) {
-		.grid {
+		.grid, .subgrid {
 			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
 		}
 		:global(.symbol-detail #tradingview-widget) {
@@ -46,6 +53,7 @@
 		}
 	}
 </style>
+
 <div class="symbol-detail grid">
 	<!-- <slot name="header">
 		<h2>
@@ -55,16 +63,51 @@
 			</span>
 		</h2>
 	</slot> -->
-	<TradingView exchange="BITMEX" {symbol} hide_side_toolbar={$medQMobile} />
+	<div class="subgrid">
+		<TradingView
+			exchange="BITMEX"
+			{symbol}
+			hide_side_toolbar={$medQMobile} />
 
-	<BitmexSymbolOrderbook {orderBook10Stream} />
-	<BitmexLiquidationTabs {liquidations} />
+		<Card>
+			<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
+		</Card>
+		<Card>
+			<section>
+				<h1>Social News</h1>
+			</section>
+		</Card>
+	</div>
 
-	<Card>
-		<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
-	</Card>
+	<div class="subgrid">
+		<BitmexSymbolOrderbook {orderBook10Stream} />
+		<Card>
+			<Tabs>
+				<TabList>
+					<Tab>Recent Trades</Tab>
+					<Tab>Whale Trades</Tab>
+				</TabList>
 
-	<Card>
+				<TabPanel>
+					<BitmexSymbolTradeRecent trades={recentTrades} {symbol} />
+				</TabPanel>
+
+				<TabPanel>
+					<BitmexSymbolTradeWhale trades={whaleTrades} {symbol} />
+				</TabPanel>
+			</Tabs>
+		</Card>
+	</div>
+	<div class="subgrid">
+		<BitmexLiquidationTabs {liquidations} />
+		<Card>
+			<section>
+				<h1>Coming Soon</h1>
+			</section>
+		</Card>
+	</div>
+
+	<!-- <Card>
 		<Tabs>
 			<TabList>
 				<Tab>Open</Tab>
@@ -84,27 +127,6 @@
 				<BitmexSymbolOrderPosition {symbol} />
 			</TabPanel>
 		</Tabs>
-	</Card>
+	</Card> -->
 
-	<Card>
-		<Tabs>
-			<TabList>
-				<Tab>Recent Trades</Tab>
-				<Tab>Whale Trades</Tab>
-			</TabList>
-
-			<TabPanel>
-				<BitmexSymbolTradeRecent trades={recentTrades} {symbol} />
-			</TabPanel>
-
-			<TabPanel>
-				<BitmexSymbolTradeWhale trades={whaleTrades} {symbol} />
-			</TabPanel>
-		</Tabs>
-	</Card>
-	<Card>
-		<section>
-			<h1>Coming Soon</h1>
-		</section>
-	</Card>
 </div>
