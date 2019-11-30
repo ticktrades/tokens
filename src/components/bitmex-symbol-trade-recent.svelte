@@ -1,7 +1,7 @@
 <script>
 	import { Table } from '@fusionstrings/elevate';
 	export let symbol = '';
-	export let recentTrades = [];
+	export let trades = [];
 	$: tradeNationality =
 		symbol === 'XBTUSD' || symbol === 'ETHUSD'
 			? 'homeNotional'
@@ -31,7 +31,7 @@
 		}
 	}
 </style>
-{#if recentTrades.length > 0}
+{#if trades.length > 0}
 <div class="table-recent-orders">
 	<Table compact>
 		<thead>
@@ -43,7 +43,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each recentTrades as recentTrade}
+			{#each trades as recentTrade}
 				<tr>
 					<td width="25%" class="number">
 						{Number(recentTrade[tradeNationality]).toLocaleString()}

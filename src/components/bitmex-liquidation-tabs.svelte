@@ -10,18 +10,18 @@
 	h4 {
 		text-align: center;
 	}
-	.liquidation-table {
+	/* .liquidation-table {
 		margin-top: 20px;
 		margin-bottom: 20px;
-	}
+	} */
 	:global(.liquidation-table .responsive) {
 		overflow-y: auto;
 		height: 50vh;
 	}
 	@media only screen and (min-width: 769px) {
-		h4 {
+		/* h4 {
 			display: none;
-		}
+		} */
 		:global(.liquidation-table .responsive) {
 			overflow-y: auto;
 			height: 26vh;

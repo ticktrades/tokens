@@ -35,14 +35,13 @@
 
 					<td width="20%">{liquidation.symbol}</td>
 
-					<td width="20%" padding-right="4px">
+					<td width="20%">
 						{liquidation.side === 'Buy' ? 'Shorts' : 'Longs'}
 					</td>
 
 					<td
 						class={`number ${liquidation.side.toLowerCase()}`}
-						width="20%"
-						padding-left="4px">
+						width="20%">
 						{Number(liquidation.price).toLocaleString()}
 					</td>
 

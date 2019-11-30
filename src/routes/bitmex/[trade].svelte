@@ -9,7 +9,8 @@
 		const {
 			symbolSummaries,
 			activeInstrumentsHourlyRate,
-			recentTrades
+			recentTrades,
+			whaleTrades
 		} = data.data;
 
 		return {
@@ -18,6 +19,7 @@
 			symbolSummaries,
 			activeInstrumentsHourlyRate,
 			recentTrades,
+			whaleTrades,
 			tradeStream: recentTrades[0],
 			liquidations: { ALL, XBTUSD, ETHUSD },
 			liquidationsChart: { XBTUSD: XBTUSD_24H }
@@ -40,6 +42,7 @@
 	export let liquidations;
 	export let liquidationsChart;
 	export let recentTrades;
+	export let whaleTrades;
 	$: {
 		tradeStreamStore.update(store => ({...store, symbol}) )
 	}
@@ -68,7 +71,6 @@
 <svelte:head>
 	<title>{tradeStream.price} | {symbol.toUpperCase()}</title>
 </svelte:head>
-
 <div class="grid">
 	<aside>
 		<StripNav />
@@ -79,6 +81,7 @@
 			{symbol}
 			{orderBook10Stream}
 			{recentTrades}
+			{whaleTrades}
 			{liquidations}
 			{liquidationsChart} />
 	</section>

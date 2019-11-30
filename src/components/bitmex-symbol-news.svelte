@@ -18,32 +18,47 @@
 	}
 </script>
 
-<h1>News {symbol}</h1>
-{#each trendingArticles as article}
-	<a class="discover-tile" href={article.url}>
+<style>
+	:global(.table-recent-orders .responsive) {
+		overflow-y: auto;
+		height: 50vh;
+	}
+	@media only screen and (min-width: 769px) {
+		:global(.table-recent-orders .responsive) {
+			overflow-y: auto;
+			height: 26vh;
+		}
+	}
+</style>
 
-		<h3>{article.title}</h3>
+<div class="trade-news-grid">
+	<h3>News {symbol}</h3>
+	{#each trendingArticles as article}
+		<a class="discover-tile" href={article.url}>
 
-		<img
-			src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
-			alt={article.sourceDomain} />
-		<div class="meta">
-			<p>{article.source.name}</p>
-			<p class="time-span">{timeConversion(article.publishedAt)}</p>
-		</div>
+			<h3>{article.title}</h3>
 
-	</a>
-{/each}
+			<img
+				src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
+				alt={article.sourceDomain} />
+			<div class="meta">
+				<p>{article.source.name}</p>
+				<p class="time-span">{timeConversion(article.publishedAt)}</p>
+			</div>
 
-{#each techAnalysis as article}
-	<a class="discover-tile" href={article.url}>
-		<h3>{article.title}</h3>
-		<img
-			src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
-			alt={article.sourceDomain} />
-		<div class="meta">
-			<p>{article.source.name}</p>
-			<p class="time-span">{timeConversion(article.publishedAt)}</p>
-		</div>
-	</a>
-{/each}
+		</a>
+	{/each}
+
+	{#each techAnalysis as article}
+		<a class="discover-tile" href={article.url}>
+			<h3>{article.title}</h3>
+			<img
+				src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
+				alt={article.sourceDomain} />
+			<div class="meta">
+				<p>{article.source.name}</p>
+				<p class="time-span">{timeConversion(article.publishedAt)}</p>
+			</div>
+		</a>
+	{/each}
+</div>

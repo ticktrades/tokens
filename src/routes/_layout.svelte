@@ -50,9 +50,8 @@
 
 <Header>
 	<Logo href=".">Ticktrades</Logo>
-
 	<div class="header-content">
-		{#if $tradeStreamStore && $tradeStreamStore.symbol && $tradeStreamStore.price}
+		{#if segment && $tradeStreamStore && $tradeStreamStore.symbol && $tradeStreamStore.price}
 			<span class="symbol">{$tradeStreamStore.symbol}</span> <span class={`price ${$tradeStreamStore.side.toLowerCase()}`}>{$tradeStreamStore.price}</span>
 		{/if}
 	</div>
