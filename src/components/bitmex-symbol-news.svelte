@@ -19,12 +19,19 @@
 </script>
 
 <style>
-	:global(.table-recent-orders .responsive) {
+	:global(.trade-news-grid) {
 		overflow-y: auto;
 		height: 50vh;
 	}
+	.meta {
+		display: flex;
+		justify-content: space-between;
+		color: rgba(255, 255, 255, 0.7);
+		text-transform: uppercase;
+		font-size: 1rem;
+	}
 	@media only screen and (min-width: 769px) {
-		:global(.table-recent-orders .responsive) {
+		:global(.trade-news-grid) {
 			overflow-y: auto;
 			height: 26vh;
 		}
@@ -36,11 +43,11 @@
 	{#each trendingArticles as article}
 		<a class="discover-tile" href={article.url}>
 
-			<h3>{article.title}</h3>
+			<h5>{article.title}</h5>
 
-			<img
+			<!-- <img
 				src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
-				alt={article.sourceDomain} />
+				alt={article.sourceDomain} /> -->
 			<div class="meta">
 				<p>{article.source.name}</p>
 				<p class="time-span">{timeConversion(article.publishedAt)}</p>
@@ -51,10 +58,10 @@
 
 	{#each techAnalysis as article}
 		<a class="discover-tile" href={article.url}>
-			<h3>{article.title}</h3>
-			<img
+			<h5>{article.title}</h5>
+			<!-- <img
 				src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
-				alt={article.sourceDomain} />
+				alt={article.sourceDomain} /> -->
 			<div class="meta">
 				<p>{article.source.name}</p>
 				<p class="time-span">{timeConversion(article.publishedAt)}</p>
