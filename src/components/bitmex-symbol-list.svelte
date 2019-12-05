@@ -32,7 +32,6 @@
 		font-weight: 300;
 	}
 </style>
-{@debug sortedActiveInstrumentTradeStore}
 
 {#if symbolSummaries.length > 0}
 	<aside class="symbol-list">
