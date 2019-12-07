@@ -63,7 +63,7 @@
 		<h2>
 			<span class="symbol">{symbol.toUpperCase()}</span>
 			<span class={`price ${side.toLowerCase()}`}>
-				{Number(price).toLocaleString()}
+				{Number.parseFloat(price).toLocaleString()}
 			</span>
 		</h2>
 	</slot> -->

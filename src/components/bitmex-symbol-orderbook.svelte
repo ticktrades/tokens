@@ -8,13 +8,13 @@
 	$: orderBook10StreamBidSize = orderBook10Stream.bids
 		.map(([price, size]) => size)
 		.reduce((previous, current) => {
-			return Number(Number(previous) + Number(current));
+			return Number.parseFloat(Number.parseFloat(previous) + Number.parseFloat(current));
 		}, 0);
 
 	$: orderBook10StreamAskSize = orderBook10Stream.asks
 		.map(([price, size]) => size)
 		.reduce((previous, current) => {
-			return Number(Number(previous) + Number(current));
+			return Number.parseFloat(Number.parseFloat(previous) + Number.parseFloat(current));
 		}, 0);
 
 	$: orderBook10StreamSize =
@@ -69,9 +69,9 @@
 		<div
 			class="summary summary-bid"
 			data-width={orderBook10StreamBidSizePercent}>
-			<span>{Number(orderBook10StreamBidSize).toLocaleString()}</span>
+			<span>{Number.parseFloat(orderBook10StreamBidSize).toLocaleString()}</span>
 			<span>
-				{Number(orderBook10StreamBidSizePercent
+				{Number.parseFloat(orderBook10StreamBidSizePercent
 						.toFixed(2)
 						.toLocaleString())} %
 			</span>
@@ -79,9 +79,9 @@
 		<div
 			class="summary summary-ask"
 			data-width={orderBook10StreamAskSizePercent}>
-			<span>{Number(orderBook10StreamAskSize).toLocaleString()}</span>
+			<span>{Number.parseFloat(orderBook10StreamAskSize).toLocaleString()}</span>
 			<span>
-				{Number(orderBook10StreamAskSizePercent
+				{Number.parseFloat(orderBook10StreamAskSizePercent
 						.toFixed(2)
 						.toLocaleString())} %
 			</span>

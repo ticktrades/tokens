@@ -42,11 +42,11 @@
 					<td
 						class={`number ${liquidation.side.toLowerCase()}`}
 						width="20%">
-						{Number(liquidation.price).toLocaleString()}
+						{Number.parseFloat(liquidation.price).toLocaleString()}
 					</td>
 
 					<td width="20%" class="number">
-						{Number(liquidation.leavesQty).toLocaleString()}
+						{Number.parseFloat(liquidation.leavesQty).toLocaleString()}
 					</td>
 				</tr>
 			{/each}

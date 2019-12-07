@@ -23,7 +23,7 @@
 				}
 				timestamp =
 					new Date(
-						Number(item.timestamp._seconds + '000')
+						Number.parseFloat(item.timestamp._seconds + '000')
 					).getHours() + ':00';
 			});
 			const hourlyObject = {
@@ -128,10 +128,10 @@
 </style>
 
 <Card>
-	<h4 class="symbol">XBTUSD <span class="price">{Number(totalBuy + totalSell).toLocaleString()}</span></h4>
+	<h4 class="symbol">XBTUSD <span class="price">{Number.parseFloat(totalBuy + totalSell).toLocaleString()}</span></h4>
 	<canvas id="xbtChart" style="width:100%" />
 	<div class="graph-legend">
-		<div>{Number(totalBuy).toLocaleString()}</div>
+		<div>{Number.parseFloat(totalBuy).toLocaleString()}</div>
 		<div class="legend-mark">
 			Short
 			<div class="long-block" />
@@ -140,6 +140,6 @@
 			Long
 			<div class="short-block" />
 		</div>
-		<div>{Number(totalSell).toLocaleString()}</div>
+		<div>{Number.parseFloat(totalSell).toLocaleString()}</div>
 	</div>
 </Card>

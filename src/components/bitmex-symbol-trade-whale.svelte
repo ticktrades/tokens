@@ -46,17 +46,17 @@
 				{#each trades as trade}
 					<tr>
 						<td width="25%" class="number">
-							{Number(trade[tradeNationality]).toLocaleString()}
+							{Number.parseFloat(trade[tradeNationality]).toLocaleString()}
 						</td>
 
 						<td width="25%" class="number">
-							{Number(trade.size).toLocaleString()}
+							{Number.parseFloat(trade.size).toLocaleString()}
 						</td>
 
 						<td
 							width="25%"
 							class={`number ${trade.side ? trade.side.toLowerCase() : ''}`}>
-							{Number(trade.price).toLocaleString()}
+							{Number.parseFloat(trade.price).toLocaleString()}
 						</td>
 
 						<td width="25%" class="number">

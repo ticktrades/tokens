@@ -14,8 +14,8 @@
 	<tbody>
 	{#each bids as [price, size]}
 		<tr>
-			<td>{Number(size).toLocaleString()}</td>
-			<td>{Number(price).toLocaleString()}</td>
+			<td>{Number.parseFloat(size).toLocaleString()}</td>
+			<td>{Number.parseFloat(price).toLocaleString()}</td>
 		</tr>
 		{/each}
 		

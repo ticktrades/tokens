@@ -14,8 +14,8 @@
 	<tbody>
 		{#each asks as [price, size]}
 			<tr>
-				<td>{Number(price).toLocaleString()}</td>
-				<td>{Number(size).toLocaleString()}</td>
+				<td>{Number.parseFloat(price).toLocaleString()}</td>
+				<td>{Number.parseFloat(size).toLocaleString()}</td>
 			</tr>
 		{/each}
 
