@@ -42,10 +42,12 @@
 	}
 	:global(.symbol-detail #tradingview-widget) {
 		grid-column: 1 / span 2;
+		height: 60vh;
 	}
 
 	@media only screen and (max-width: 768px) {
-		.grid, .subgrid {
+		.grid,
+		.subgrid {
 			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
 		}
 		:global(.symbol-detail #tradingview-widget) {
@@ -69,9 +71,8 @@
 			{symbol}
 			hide_side_toolbar={$medQMobile} />
 
-		<Card>
-			<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
-		</Card>
+		<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
+
 		<Card>
 			<section>
 				<h1>Social News</h1>
@@ -81,6 +82,10 @@
 
 	<div class="subgrid">
 		<BitmexSymbolOrderbook {orderBook10Stream} />
+		<BitmexLiquidationTabs {liquidations} />
+	</div>
+	<div class="subgrid">
+		
 		<Card>
 			<Tabs>
 				<TabList>
@@ -96,14 +101,6 @@
 					<BitmexSymbolTradeWhale trades={whaleTrades} {symbol} />
 				</TabPanel>
 			</Tabs>
-		</Card>
-	</div>
-	<div class="subgrid">
-		<BitmexLiquidationTabs {liquidations} />
-		<Card>
-			<section>
-				<h1>Coming Soon</h1>
-			</section>
 		</Card>
 	</div>
 

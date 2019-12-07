@@ -1,4 +1,6 @@
 <script>
+	import Card from './card.svelte';
+
 	export let symbol = '';
 	export let trendingArticles = [];
 	export let techAnalysis = [];
@@ -21,7 +23,10 @@
 <style>
 	:global(.trade-news-grid) {
 		overflow-y: auto;
-		height: 50vh;
+		height: 30vh;
+	}
+	:global(.trade-news-grid .card) {
+		margin-bottom: 10px;
 	}
 	.meta {
 		display: flex;
@@ -30,42 +35,53 @@
 		text-transform: uppercase;
 		font-size: 1rem;
 	}
-	@media only screen and (min-width: 769px) {
+	@media only screen and (max-width: 768px) {
 		:global(.trade-news-grid) {
 			overflow-y: auto;
 			height: 26vh;
 		}
 	}
+	.discover-tile p{
+		color: #ffaea1;
+		margin-bottom: 1rem;
+	}
 </style>
 
 <div class="trade-news-grid">
-	<h3>News {symbol}</h3>
 	{#each trendingArticles as article}
-		<a class="discover-tile" href={article.url}>
+		<Card>
+			<a class="discover-tile" href={article.url}>
 
-			<h5>{article.title}</h5>
+				<p>{article.title}</p>
 
-			<!-- <img
+				<!-- <img
 				src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
 				alt={article.sourceDomain} /> -->
-			<div class="meta">
-				<p>{article.source.name}</p>
-				<p class="time-span">{timeConversion(article.publishedAt)}</p>
-			</div>
+				<div class="meta">
+					<span>{article.source.name}</span>
+					<span class="time-span">
+						{timeConversion(article.publishedAt)}
+					</span>
+				</div>
 
-		</a>
+			</a>
+		</Card>
 	{/each}
 
 	{#each techAnalysis as article}
-		<a class="discover-tile" href={article.url}>
-			<h5>{article.title}</h5>
-			<!-- <img
+		<Card>
+			<a class="discover-tile" href={article.url}>
+				<p>{article.title}</p>
+				<!-- <img
 				src={article.thumbnail ? article.thumbnail : article.originalImageUrl}
 				alt={article.sourceDomain} /> -->
-			<div class="meta">
-				<p>{article.source.name}</p>
-				<p class="time-span">{timeConversion(article.publishedAt)}</p>
-			</div>
-		</a>
+				<div class="meta">
+					<span>{article.source.name}</span>
+					<span class="time-span">
+						{timeConversion(article.publishedAt)}
+					</span>
+				</div>
+			</a>
+		</Card>
 	{/each}
 </div>

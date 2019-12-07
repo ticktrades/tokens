@@ -28,8 +28,9 @@
 		text-align: left;
 		display: inline-block;
 	}
-	.number{
+	.symbol-list .button.invert .price{
 		font-weight: 300;
+		letter-spacing: normal;
 	}
 </style>
 
@@ -41,7 +42,7 @@
 					class:active={symbol.toLocaleLowerCase() === active.toLowerCase()}>
 					<Button invert {href}>
 						<span class="left">{symbol}</span>
-						<span class={`number ${sortedActiveInstrumentTradeStore[symbol] && sortedActiveInstrumentTradeStore[symbol].side ? sortedActiveInstrumentTradeStore[symbol].side.toLowerCase() : ''}`}>
+						<span class={`price ${sortedActiveInstrumentTradeStore[symbol] && sortedActiveInstrumentTradeStore[symbol].side ? sortedActiveInstrumentTradeStore[symbol].side.toLowerCase() : ''}`}>
 							{#if sortedActiveInstrumentTradeStore[symbol]}
 								{sortedActiveInstrumentTradeStore[symbol].price}
 							{:else}{price}{/if}

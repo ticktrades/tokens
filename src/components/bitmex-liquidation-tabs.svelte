@@ -24,7 +24,7 @@
 		} */
 		:global(.liquidation-table .responsive) {
 			overflow-y: auto;
-			height: 26vh;
+			height: 30vh;
 		}
 	}
 </style>

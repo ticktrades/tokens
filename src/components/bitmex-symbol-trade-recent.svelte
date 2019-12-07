@@ -27,7 +27,7 @@
 		
 		:global(.table-recent-orders .responsive) {
 			overflow-y: auto;
-			height: 26vh;
+			height: 79vh;
 		}
 	}
 </style>
