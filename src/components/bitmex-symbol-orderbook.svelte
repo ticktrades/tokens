@@ -8,13 +8,13 @@
 	$: orderBook10StreamBidSize = orderBook10Stream.bids
 		.map(([price, size]) => size)
 		.reduce((previous, current) => {
-			return Number.parseFloat(Number.parseFloat(previous).toPrecision() + Number.parseFloat(current).toPrecision()).toPrecision();
+			return Number(Number(previous) + Number(current));
 		}, 0);
 
 	$: orderBook10StreamAskSize = orderBook10Stream.asks
 		.map(([price, size]) => size)
 		.reduce((previous, current) => {
-			return Number.parseFloat(Number.parseFloat(previous).toPrecision() + Number.parseFloat(current).toPrecision()).toPrecision();
+			return Number(Number(previous) + Number(current));
 		}, 0);
 
 	$: orderBook10StreamSize =
@@ -66,6 +66,7 @@
 
 <section>
 	<div class="gauge">
+	<!-- {@debug orderBook10StreamBidSize} -->
 		<div
 			class="summary summary-bid"
 			data-width={orderBook10StreamBidSizePercent}>
