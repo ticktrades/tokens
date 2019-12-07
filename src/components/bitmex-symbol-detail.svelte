@@ -41,8 +41,10 @@
 		grid-gap: 10px;
 	}
 	:global(.symbol-detail #tradingview-widget) {
-		grid-column: 1 / span 2;
 		height: 60vh;
+	}
+	:global(.symbol-detail #tradingview-widget, .symbol-detail .trade-news-grid) {
+		grid-column: 1 / span 2;
 	}
 
 	@media only screen and (max-width: 768px) {
@@ -72,12 +74,12 @@
 			hide_side_toolbar={$medQMobile} />
 
 		<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
-
+<!-- 
 		<Card>
 			<section>
 				<h1>Social News</h1>
 			</section>
-		</Card>
+		</Card> -->
 	</div>
 
 	<div class="subgrid">
