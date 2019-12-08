@@ -7,26 +7,16 @@
 
 	export let page;
 	const { params, path } = page;
-	let symbolSummaries = [{ symbol: 'XBTUSD' }, { symbol: 'ETHUSD' }];
-
-	// function onMediaChange(event) {
-	// 	if (event.matches) {
-	// 		return goto('/bitmex');
-	// 	}
-	// }
-	// onMount(() => {
-	// 	const mql = window.matchMedia('screen and (max-width: 768px)');
-	// 	onMediaChange(mql);
-	// 	mql.addListener(onMediaChange);
-	// 	return () => mql.removeListener(onMediaChange);
-	// });
+	let symbolSummaries = [{ symbol: 'XBTUSD' }, { symbol: 'ETHUSD' }].map(instrument => ({
+			...instrument,
+			href: `bitmex/${instrument.symbol.toLocaleLowerCase()}`
+		}));
 </script>
 
 <style>
 	.grid {
 		display: grid;
 		grid-template-columns: auto 1fr;
-		grid-gap: 10px;
 		/* grid-template-columns: repeat(auto-fill, minmax(calc(769px / 2), 1fr)); */
 	}
 
@@ -50,7 +40,7 @@
 <div class="grid">
 	<aside>
 		<StripNav />
-		<BitmexSymbolList {symbolSummaries} />
+		<BitmexSymbolList active={params.trade} {symbolSummaries} />
 	</aside>
 	<section class="detail">
 		<BitmexSymbolDetail symbol={params.trade} />

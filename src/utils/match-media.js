@@ -17,4 +17,4 @@ const mediaQuery = (query, defaultState = false) => {
 	return { subscribe };
 };
 
-export { mediaQuery };
+export default mediaQuery;

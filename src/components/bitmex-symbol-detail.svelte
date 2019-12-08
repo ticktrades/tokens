@@ -11,65 +11,102 @@
 	import BitmexSymbolOrderbook from './bitmex-symbol-orderbook.svelte';
 	import BitmexSymbolTradeRecent from './bitmex-symbol-trade-recent.svelte';
 	import BitmexSymbolTradeWhale from './bitmex-symbol-trade-whale.svelte';
-	import BitmexSymbolLiquidations from './bitmex-symbol-liquidations.svelte';
-	import BitmexSymbolLS from './bitmex-symbol-ls.svelte';
+	import BitmexLiquidationTabs from './bitmex-liquidation-tabs.svelte';
+	import mediaQuery from '../utils/match-media.js';
+
+	let medQMobile = mediaQuery('(max-width: 768px)');
 
 	export let symbol;
+	export let orderBook10Stream = { bids: [], asks: [] };
+	export let liquidations;
+	export let recentTrades;
+	export let whaleTrades;
+	export let trendingArticles = [];
+	export let techAnalysis = [];
 </script>
 
 <style>
 	.grid {
 		display: grid;
 		/* grid-template-columns: minmax(500px, 2fr) minmax(300px, 1fr) minmax(300px, 1fr);  */
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
 		box-sizing: border-box;
 		grid-gap: 10px;
+	}
+	.subgrid {
+		display: grid;
+		/* grid-template-columns: minmax(500px, 2fr) minmax(300px, 1fr) minmax(300px, 1fr);  */
+		grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+		box-sizing: border-box;
+		grid-gap: 10px;
+	}
+	:global(.symbol-detail #tradingview-widget) {
+		height: 60vh;
+	}
+	:global(.symbol-detail #tradingview-widget, .symbol-detail .trade-news-grid) {
+		grid-column: 1 / span 2;
+	}
+
+	@media only screen and (max-width: 768px) {
+		.grid,
+		.subgrid {
+			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
+		}
+		:global(.symbol-detail #tradingview-widget) {
+			grid-column: 1;
+		}
 	}
 </style>
 
 <div class="symbol-detail grid">
-	<TradingView exchange="BITMEX" {symbol} />
-	<BitmexSymbolOrderbook />
-	<Card>
-		<Tabs>
-			<TabList>
-				<Tab>Liquidations</Tab>
-				<Tab>Longs vs Shorts</Tab>
-			</TabList>
+	<!-- <slot name="header">
+		<h2>
+			<span class="symbol">{symbol.toUpperCase()}</span>
+			<span class={`price ${side.toLowerCase()}`}>
+				{Number.parseFloat(price).toLocaleString()}
+			</span>
+		</h2>
+	</slot> -->
+	<div class="subgrid">
+		<TradingView
+			exchange="BITMEX"
+			{symbol}
+			hide_side_toolbar={$medQMobile} />
 
-			<TabPanel>
-				<BitmexSymbolLiquidations {symbol} />
-			</TabPanel>
+		<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
+<!-- 
+		<Card>
+			<section>
+				<h1>Social News</h1>
+			</section>
+		</Card> -->
+	</div>
 
-			<TabPanel>
-				<BitmexSymbolLS {symbol} />
-			</TabPanel>
-		</Tabs>
-	</Card>
+	<div class="subgrid">
+		<BitmexSymbolOrderbook {orderBook10Stream} />
+		<BitmexLiquidationTabs {liquidations} />
+	</div>
+	<div class="subgrid">
+		
+		<Card>
+			<Tabs>
+				<TabList>
+					<Tab>Recent Trades</Tab>
+					<Tab>Whale Trades</Tab>
+				</TabList>
 
-	<Card>
-		<Tabs>
-			<TabList>
-				<Tab>News</Tab>
-				<Tab>Reddit</Tab>
-				<Tab>Twitter</Tab>
-			</TabList>
+				<TabPanel>
+					<BitmexSymbolTradeRecent trades={recentTrades} {symbol} />
+				</TabPanel>
 
-			<TabPanel>
-				<BitmexSymbolNews {symbol} />
-			</TabPanel>
+				<TabPanel>
+					<BitmexSymbolTradeWhale trades={whaleTrades} {symbol} />
+				</TabPanel>
+			</Tabs>
+		</Card>
+	</div>
 
-			<TabPanel>
-				<BitmexSymbolReddit {symbol} />
-			</TabPanel>
-
-			<TabPanel>
-				<BitmexSymbolTwitter {symbol} />
-			</TabPanel>
-		</Tabs>
-	</Card>
-
-	<Card>
+	<!-- <Card>
 		<Tabs>
 			<TabList>
 				<Tab>Open</Tab>
@@ -89,27 +126,6 @@
 				<BitmexSymbolOrderPosition {symbol} />
 			</TabPanel>
 		</Tabs>
-	</Card>
+	</Card> -->
 
-	<Card>
-		<Tabs>
-			<TabList>
-				<Tab>Recent Trades</Tab>
-				<Tab>Whale Trades</Tab>
-			</TabList>
-
-			<TabPanel>
-				<BitmexSymbolTradeRecent {symbol} />
-			</TabPanel>
-
-			<TabPanel>
-				<BitmexSymbolTradeWhale {symbol} />
-			</TabPanel>
-		</Tabs>
-	</Card>
-	<Card>
-		<section>
-			<h1>Coming Soon</h1>
-		</section>
-	</Card>
 </div>

@@ -1,6 +1,5 @@
 <script>
 	import { Table } from '@fusionstrings/elevate';
-	export let symbol = '';
 </script>
 
 <style>
@@ -10,9 +9,9 @@
 	}
 
 
-	:global(.orderbook .responsive) {
+	/* :global(.orderbook .responsive) {
 		height: 25vh;
-	}
+	} */
 </style>
 
 <section class="liquidation">

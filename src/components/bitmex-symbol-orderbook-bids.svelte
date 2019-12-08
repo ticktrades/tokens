@@ -1,6 +1,6 @@
 <script>
 	import { Table } from '@fusionstrings/elevate';
-	export let symbol = '';
+	export let bids = [0, 0];
 </script>
 
 <h6>Bids</h6>
@@ -12,45 +12,12 @@
 		</tr>
 	</thead>
 	<tbody>
+	{#each bids as [price, size]}
 		<tr>
-			<td>258 005</td>
-			<td>9 430.5</td>
+			<td>{Number.parseFloat(size).toPrecision().toLocaleString()}</td>
+			<td>{Number.parseFloat(price).toPrecision().toLocaleString()}</td>
 		</tr>
-		<tr>
-			<td>94 426</td>
-			<td>9 430</td>
-		</tr>
-		<tr>
-			<td>32 612</td>
-			<td>9 429.5</td>
-		</tr>
-		<tr>
-			<td>239 473</td>
-			<td>9 429</td>
-		</tr>
-		<tr>
-			<td>37 887</td>
-			<td>9 428.5</td>
-		</tr>
-		<tr>
-			<td>254 698</td>
-			<td>9 428</td>
-		</tr>
-		<tr>
-			<td>63 305</td>
-			<td>9 427.5</td>
-		</tr>
-		<tr>
-			<td>44 417</td>
-			<td>9 427</td>
-		</tr>
-		<tr>
-			<td>19 536</td>
-			<td>9 426.5</td>
-		</tr>
-		<tr>
-			<td>73 760</td>
-			<td>9 426</td>
-		</tr>
+		{/each}
+		
 	</tbody>
 </Table>

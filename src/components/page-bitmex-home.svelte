@@ -7,7 +7,7 @@
 	export let page;
 	const { path } = page;
 	
-	let symbolSummaries = [{ symbol: 'XBTUSD' }, { symbol: 'ETHUSD' }];
+	let symbolSummaries = [{ symbol: 'XBTUSD', href: 'bitmex/xbtusd' }, { symbol: 'ETHUSD', href: 'bitmex/ethusd' }];
 
 	function onMediaChange(event){
 		if(event.matches){	
