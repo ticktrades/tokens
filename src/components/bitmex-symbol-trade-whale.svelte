@@ -26,7 +26,7 @@
 	@media only screen and (min-width: 769px) {
 		:global(.table-whale-trades .responsive) {
 			overflow-y: auto;
-			height: 26vh;
+			height: 79vh;
 		}
 	}
 </style>
