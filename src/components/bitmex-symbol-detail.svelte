@@ -43,51 +43,44 @@
 	:global(.symbol-detail #tradingview-widget) {
 		height: 60vh;
 	}
-	:global(.symbol-detail #tradingview-widget, .symbol-detail .trade-news-grid) {
+	:global(.symbol-detail #tradingview-widget, .symbol-detail
+			.trade-news-grid) {
 		grid-column: 1 / span 2;
 	}
 
 	@media only screen and (max-width: 768px) {
-		.grid,
-		.subgrid {
+		.grid {
 			grid-template-columns: repeat(auto-fill, minmax(auto, 100vw));
 		}
+		.subgrid {
+			display: block;
+			margin: 10px 20px;
+		}
 		:global(.symbol-detail #tradingview-widget) {
-			grid-column: 1;
+			padding: 0 0 20px;
 		}
 	}
 </style>
 
 <div class="symbol-detail grid">
-	<!-- <slot name="header">
-		<h2>
-			<span class="symbol">{symbol.toUpperCase()}</span>
-			<span class={`price ${side.toLowerCase()}`}>
-				{Number.parseFloat(price).toLocaleString()}
-			</span>
-		</h2>
-	</slot> -->
 	<div class="subgrid">
 		<TradingView
 			exchange="BITMEX"
 			{symbol}
 			hide_side_toolbar={$medQMobile} />
-
-		<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
-<!-- 
-		<Card>
-			<section>
-				<h1>Social News</h1>
-			</section>
-		</Card> -->
+		{#if !$medQMobile}
+			<BitmexSymbolNews {trendingArticles} {techAnalysis} {symbol} />
+		{/if}
 	</div>
 
 	<div class="subgrid">
 		<BitmexSymbolOrderbook {orderBook10Stream} />
-		<BitmexLiquidationTabs {liquidations} />
+		{#if !$medQMobile}
+			<BitmexLiquidationTabs {liquidations} />
+		{/if}
 	</div>
 	<div class="subgrid">
-		
+
 		<Card>
 			<Tabs>
 				<TabList>
@@ -105,27 +98,5 @@
 			</Tabs>
 		</Card>
 	</div>
-
-	<!-- <Card>
-		<Tabs>
-			<TabList>
-				<Tab>Open</Tab>
-				<Tab>Closed</Tab>
-				<Tab>Position</Tab>
-			</TabList>
-
-			<TabPanel>
-				<BitmexSymbolOrderOpen {symbol} />
-			</TabPanel>
-
-			<TabPanel>
-				<BitmexSymbolOrderClose {symbol} />
-			</TabPanel>
-
-			<TabPanel>
-				<BitmexSymbolOrderPosition {symbol} />
-			</TabPanel>
-		</Tabs>
-	</Card> -->
 
 </div>
