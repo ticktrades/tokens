@@ -19,7 +19,7 @@
 	export let symbol;
 	export let orderBook10Stream = { bids: [], asks: [] };
 	export let liquidations;
-	export let recentTrades;
+	export let recentTrades = [];
 	export let whaleTrades;
 	export let trendingArticles = [];
 	export let techAnalysis = [];

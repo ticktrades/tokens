@@ -10,6 +10,7 @@ export {
 	Header
 } from '@fusionstrings/elevate';
 
+export { default as Loader } from './src/components/loader.svelte';
 export { default as Logo } from './src/components/logo.svelte';
 export { default as Card } from './src/components/card.svelte';
 export {
